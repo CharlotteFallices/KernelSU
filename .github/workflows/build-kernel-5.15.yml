@@ -31,9 +31,8 @@ jobs:
         GKI_ROOT=$(pwd)
         echo "[+] GKI_ROOT: $GKI_ROOT"
         echo "[+] Copy kernel su driver to $GKI_ROOT/common/drivers"
-        ls $GKI_ROOT
-        ls $GKI_ROOT/common
-        ls $GITHUB_WORKSPACE/KernelSU
+        wget https://android.googlesource.com/kernel/common/+archive/refs/heads/${{ martix.tag }}.tar.gz -O $GKI_ROOT
+        tar -xf $GKI_ROOT/${{ martix.tag }}.tar.gz $GKI_ROOT/common
         ln -sf $GITHUB_WORKSPACE/KernelSU/kernel $GKI_ROOT/common/drivers/kernelsu
         echo "[+] Add kernel su driver to Makefile"
         DRIVER_MAKEFILE=$GKI_ROOT/common/drivers/Makefile
