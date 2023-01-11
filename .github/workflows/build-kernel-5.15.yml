@@ -9,6 +9,10 @@ jobs:
             tag: "android-gs-raviole-5.10-android13-qpr2-beta"
             os_version: 13.0.0
             os_version_level: "2022-12"
+          - version: "android13-5.10-107"
+            tag: "android-gs-raviole-5.10-android13-qpr1"
+            os_version: 13.0.0
+            os_version_level: "2022-12"
           - version: "android13-5.15-74"
             tag: "android13-5.15-2022-12"
             os_version: 13.0.0
