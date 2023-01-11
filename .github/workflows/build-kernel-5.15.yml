@@ -1,23 +1,14 @@
 name: Build Kernel 5.15
-on:
-  push:
-    branches: [ "main" ]
-    paths: 
-      - '.github/workflows/build-kernel-5.15.yml'
-      - 'kernel/**'
-  pull_request:
-    branches: [ "main" ]
-    paths: 
-      - 'kernel/**'
+on: workflow_dispatch
 jobs:
   build:
     strategy:
       matrix:
         include:
-          - version: "android13-5.15-41"
-            tag: "android13-5.15-2022-11"
+          - version: "android13-5.10-107"
+            tag: "android-gs-raviole-5.10-android13-qpr2-beta"
             os_version: 13.0.0
-            os_version_level: "2022-11"
+            os_version_level: "2022-12"
           - version: "android13-5.15-74"
             tag: "android13-5.15-2022-12"
             os_version: 13.0.0
