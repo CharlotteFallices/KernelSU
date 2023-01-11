@@ -10,7 +10,7 @@ jobs:
             os_version: 13.0.0
             os_version_level: "2022-11"
           - version: "android13-5.15-74"
-            tag: "android13-5.15-2022-12"
+            tag: "common-android13-5.15-2022-12"
             os_version: 13.0.0
             os_version_level: "2022-12"
 
@@ -25,7 +25,7 @@ jobs:
         cd $GITHUB_WORKSPACE
         git clone https://gerrit.googlesource.com/git-repo
         mkdir android-kernel && cd android-kernel
-        ../git-repo/repo init --depth=1 --u https://android.googlesource.com/kernel/manifest -b common-${{ matrix.tag }}
+        ../git-repo/repo init --depth=1 --u https://android.googlesource.com/kernel/manifest -b ${{ matrix.tag }}
         ../git-repo/repo sync -j$(nproc --all)
         echo "[+] KernelSU setup"
         GKI_ROOT=$(pwd)
